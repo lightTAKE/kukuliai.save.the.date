@@ -1,0 +1,13 @@
+import { baseRestServiceInstance } from "./base-rest-service";
+import { RespondPleaseResponse } from "./models/RespondPleaseResponse";
+
+export class RespondPleaseRestService {
+  private static restApiBase = "rsvp-restapi";
+
+  public static getAllRsvps = async (): Promise<RespondPleaseResponse[]> => {
+    const response = await baseRestServiceInstance.get<RespondPleaseResponse[]>(
+      `${RespondPleaseRestService.restApiBase}/all`
+    );
+    return response.data;
+  };
+}
