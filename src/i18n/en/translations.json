@@ -1,6 +1,16 @@
 {
-  "save_the_date": "SAVE\nTHE\nDATE\n",
-  "names": "Tadas + Greta\n",
-  "date": "MAY | 11 | 2023\n",
-  "invitation": "INVITATION TO FOLLOW"
+  "save_the_date": {
+    "title": "SAVE\nTHE\nDATE\n",
+    "names": "Tadas + Greta\n",
+    "date": "MAY | 11 | 2023\n",
+    "invitation": "INVITATION TO FOLLOW"
+  },
+  "invitation": {
+    "title": "Please join us\nto our wedding ceremony\n",
+    "names": "GRETA\n+ TADAS\n",
+    "date": "MAY | 11 | 2023\n",
+    "address": "Fazenda, Tartoko k. 5, Kaišiadorių raj.,\nKauno apskritis, Lietuva\n16:00\n",
+    "reception": "Reception\n",
+    "rsvp": "RSVP"
+  }
 }

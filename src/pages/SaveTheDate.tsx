@@ -1,4 +1,4 @@
-import kukuliai from "./../scaled_kukuliai.jpg";
+import kukuliai from "./../images/scaled_kukuliai.jpg";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
 
@@ -17,11 +17,6 @@ const StyledHeader = styled.header`
   color: white;
 `;
 
-const Kukuliai = styled.img`
-  width: 100%;
-  height: auto;
-`;
-
 const StyledContainer = styled.div`
   position: relative;
   text-align: center;
@@ -35,6 +30,11 @@ const StyledContainer = styled.div`
     outline: 0.3rem solid white;
     outline-offset: -1rem;
   }
+`;
+
+const Kukuliai = styled.img`
+  width: 100%;
+  height: auto;
 `;
 
 const CenteredText = styled.div`
@@ -83,7 +83,7 @@ const InvitationText = styled.div`
 `;
 
 function SaveTheDate() {
-  const { t } = useTranslation();
+  const { t } = useTranslation("", { keyPrefix: "save_the_date" });
 
   return (
     <StyledComponentContainer>
@@ -91,7 +91,7 @@ function SaveTheDate() {
         <StyledContainer>
           <Kukuliai src={kukuliai} />
           <CenteredText>
-            <SaveTheDateText>{t("save_the_date")}</SaveTheDateText>
+            <SaveTheDateText>{t("title")}</SaveTheDateText>
             <NamesText>{t("names")}</NamesText>
             <DateText>{t("date")}</DateText>
             <InvitationText>{t("invitation")}</InvitationText>

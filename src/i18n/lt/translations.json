@@ -1,6 +1,16 @@
 {
-  "save_the_date": " ĮSIMINK\nDATĄ\n",
-  "names": "Tadas + Greta\n",
-  "date": "GEG | 11 | 2023\n",
-  "invitation": "LAUK PAKVIETIMO"
+  "save_the_date": {
+    "title": " ĮSIMINK\nDATĄ\n",
+    "names": "Tadas + Greta\n",
+    "date": "GEG | 11 | 2023\n",
+    "invitation": "LAUK PAKVIETIMO"
+  },
+  "invitation": {
+    "title": "Džiaugsmingai kviečiame šią\n mums svarbią dieną būti kartu\n",
+    "names": "GRETA\n+ TADAS\n",
+    "date": "GEG | 11 | 2023\n",
+    "address": "Tartoko k. 5, Kaišiadorių raj., Kauno apskritis\n",
+    "reception": "Programa\n",
+    "rsvp": "Prašome atsakyti"
+  }
 }
