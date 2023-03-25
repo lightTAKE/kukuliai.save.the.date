@@ -5,7 +5,14 @@ function Invitation() {
 
   console.log(JSON.stringify(data));
 
-  return <span>You are Invited</span>;
+  return (
+    <span>
+      <small>
+        Kukuliai rest-api base:{" "}
+        <b>{process.env.REACT_APP_KUKULIAI_REST_API_BASE}</b>
+      </small>
+    </span>
+  );
 }
 
 export default Invitation;
