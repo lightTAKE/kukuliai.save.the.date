@@ -64,8 +64,6 @@ const SyledButton = styled.button`
 `;
 
 function RespondPlease() {
-  const { t } = useTranslation("", { keyPrefix: "invitation" });
-
   const [attendingCheck, setAttendingChecked] = useState(true);
   const [transportCheck, setTransportChecked] = useState(true);
 
