@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { useTranslation } from "react-i18next";
 import Checkbox from "../components/checkbox";
 import { useState } from "react";
 
