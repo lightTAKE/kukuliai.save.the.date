@@ -6,6 +6,8 @@ import OpenSansBoldWoff from "./OpenSans-Bold.woff";
 import OpenSansBoldWoff2 from "./OpenSans-Bold.woff2";
 import OpenSansSemiboldWoff from "./OpenSans-SemiBold.woff";
 import OpenSansSemiboldWoff2 from "./OpenSans-SemiBold.woff2";
+import RozhaOneWoff from "./Rozha-One.woff";
+import RozhaOneWoff2 from "./Rozha-One.woff2";
 
 import PermanentMarkerWoff from "./PermanentMarker.woff";
 
@@ -37,8 +39,15 @@ export default createGlobalStyle`
 
     @font-face {
         font-family: 'Permenent Marker';
-        src: local('Open Sans Semibold'),
+        src: local('Permenent Marker'),
         url(${PermanentMarkerWoff}) format('woff');
         font-style: regular;
     }
+
+    @font-face {
+        font-family: 'Rozha One';
+        src: local('Rozha One'),
+        url(${RozhaOneWoff2}) format('woff2'),
+        url(${RozhaOneWoff}) format('woff');
+    }  
 `;

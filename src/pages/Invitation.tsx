@@ -1,6 +1,7 @@
 import invitation_background from "./../images/invitation_background.jpg";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 const StyledComponentContainer = styled.div`
   text-align: center;
@@ -20,7 +21,7 @@ const StyledHeader = styled.header`
 const StyledContainer = styled.div`
   position: relative;
   text-align: left;
-  color: black;
+  color: white;
   display: inline-block;
   overflow: hidden;
 `;
@@ -32,9 +33,9 @@ const InvitationBackground = styled.img`
 
 const AlignedText = styled.div`
   position: absolute;
-  top: 70%;
+  top: 68%;
   left: 40%;
-  transform: translate(-72%, -40%);
+  transform: translate(-68%, -40%);
 `;
 
 const InvitationText = styled.div`
@@ -46,8 +47,9 @@ const InvitationText = styled.div`
 `;
 
 const NamesText = styled.div`
-  font-size: 5rem;
-  font-family: "Open Sans Bold";
+  font-size: 7rem;
+  font-family: "Rozha One";
+  line-height: 1;
   padding: 1.5rem 0 1.5rem 0;
 
   @media screen and (max-width: 700px) {
@@ -68,21 +70,26 @@ const DateText = styled.div`
 
 const AddressText = styled.div`
   font-family: "Open Sans";
-  padding: 0 0 1rem 0;
+  padding: 0 0 1.5rem 0;
 `;
 
-const ReceptionText = styled.div`
-  font-family: "Open Sans";
-  padding: 0 0 1rem 0;
-`;
-
-const RsvpText = styled.div`
-  font-size: 1.75rem;
+const RsvpButton = styled.button`
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+  display: block;
   font-family: "Permenent Marker";
+  font-size: 2rem;
+  color: white;
+  &:hover {
+    color: #cb4127;
+  }
 `;
 
 function Invitation() {
   const { t } = useTranslation("", { keyPrefix: "invitation" });
+  const rsvpNavigation = useNavigate();
+  const rsvpNavigationHandler = () => rsvpNavigation("/rsvp");
 
   return (
     <StyledComponentContainer>
@@ -94,8 +101,9 @@ function Invitation() {
             <NamesText>{t("names")}</NamesText>
             <DateText>{t("date")}</DateText>
             <AddressText>{t("address")}</AddressText>
-            <ReceptionText>{t("reception")}</ReceptionText>
-            <RsvpText>{t("rsvp")}</RsvpText>
+            <RsvpButton type="button" onClick={rsvpNavigationHandler}>
+              {t("rsvp")}
+            </RsvpButton>
           </AlignedText>
         </StyledContainer>
       </StyledHeader>
