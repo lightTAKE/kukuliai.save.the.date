@@ -62,7 +62,7 @@ const StyledMenuItem = styled.a`
   }
 
   @media screen and (max-width: 700px) {
-    padding: 1.5rem 0.7rem;
+    padding: 1.5rem 0.4rem;
   }
 `;
 
