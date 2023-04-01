@@ -1,4 +1,5 @@
 import { baseRestServiceInstance } from "./base-rest-service";
+import { RespondPleaseRequest } from "./models/RespondPleaseRequest";
 import { RespondPleaseResponse } from "./models/RespondPleaseResponse";
 
 export class RespondPleaseRestService {
@@ -9,5 +10,12 @@ export class RespondPleaseRestService {
       `${RespondPleaseRestService.restApiBase}/all`
     );
     return response.data;
+  };
+
+  public static rsvp = async (request: RespondPleaseRequest): Promise<void> => {
+    await baseRestServiceInstance.post(
+      `${RespondPleaseRestService.restApiBase}/respond`,
+      request
+    );
   };
 }

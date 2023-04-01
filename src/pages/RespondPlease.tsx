@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Checkbox from "../components/checkbox";
 import { useState } from "react";
+import useRespond from "../hooks/use-respond";
 
 const StyledComponentContainer = styled.div`
   display: flex;
@@ -63,8 +64,22 @@ const SyledButton = styled.button`
 `;
 
 function RespondPlease() {
+  const [name, setName] = useState("");
   const [attendingCheck, setAttendingChecked] = useState(true);
   const [transportCheck, setTransportChecked] = useState(true);
+  const [comments, setComments] = useState("");
+
+  const respond = useRespond();
+
+  const handleSubmit = async (event: any) => {
+    event.preventDefault();
+    await respond({
+      name: name,
+      attending: attendingCheck,
+      needTransport: transportCheck,
+      comments: comments,
+    });
+  };
 
   return (
     <StyledComponentContainer>
@@ -74,7 +89,12 @@ function RespondPlease() {
           <StyledForm>
             <StyledGridContainer>
               <StyledLabel>Name&nbsp;&nbsp;</StyledLabel>
-              <StyledTextInput type="text" autoComplete="off" id="name" />
+              <StyledTextInput
+                type="text"
+                name="name"
+                autoComplete="off"
+                onChange={(e) => setName(e.target.value)}
+              />
               <StyledLabel>Will be there!</StyledLabel>
               <Checkbox
                 id="attending"
@@ -87,7 +107,15 @@ function RespondPlease() {
                 checked={transportCheck}
                 onChange={() => setTransportChecked(!transportCheck)}
               />
-              <SyledButton type="submit">Submit</SyledButton>
+              <StyledLabel>Comments&nbsp;&nbsp;</StyledLabel>
+              <StyledTextInput
+                type="text"
+                name="comments"
+                autoComplete="off"
+                placeholder="alergies, special needs, etc."
+                onChange={(e) => setComments(e.target.value)}
+              />
+              <SyledButton onClick={handleSubmit}>Submit</SyledButton>
             </StyledGridContainer>
           </StyledForm>
         </StyledFieldset>

@@ -1,5 +1,4 @@
-export interface RespondPleaseResponse {
-  id: number;
+export interface RespondPleaseRequest {
   name: string;
   attending: boolean;
   needTransport: boolean;
