@@ -6,6 +6,61 @@
     "invitation": "LAUK PAKVIETIMO"
   },
   "invitation": {
+    "menu": {
+      "rsvp": "Prašome atsakyti",
+      "home": "Pagrindinis",
+      "wedding": "Vestuvės",
+      "getting_there": "Kaip nuvykti",
+      "faq": "DUK"
+    },
+    "home_section": {
+      "getting_married": "Tuokiasi",
+      "date": "GEG | 11 | 2023"
+    },
+    "wedding_section": {
+      "header": "VESTUVĖS",
+      "invitation_paragraph": "Džiaugsmingai kviečiame šią mums svarbią dieną būti kartu!",
+      "when_header": "Kada",
+      "when_paragraph": "2023 Gegužės 11, 14:00",
+      "where_header": "Kur",
+      "where_paragraph": "Fazenda, Tartoko k. 5, Kaišiadorių raj.,\nKauno apskritis, Lietuva",
+      "rsvp_paragraph": "Prašome atsakyti ne vėliau kaip balandžio 10 d.",
+      "rsvp_button": "Prašome atsakyti"
+    },
+    "getting_there_section": {
+      "header": "KAIP ATVYKTI",
+      "transportation_header": "Transportas",
+      "transportation_paragraph": "Iš Vilniaus transportą į ir iš Fazendos sodybos suorganizuosime. Taigi Jums nereikia rūpintis dėl vairavimo.\n Instrukcijas kur atvykti pateiksime vėliau.\n\nJeigu norite keliauti patys, tikslią žemėlapio nuorodą rasite paspaudę mygtuką \"Žemėlapis\".",
+      "accomodations_header": "Nakvynė",
+      "accomodations_paragraph": "Sodyboje nenakvosime, pasibaigus šventei mūsų lauks autobusas, kuris mus parveš į Vilnių.",
+      "map_button": "Žemėlapis",
+      "map_button_link": "https://goo.gl/maps/SBEMyieyoyFVnmbh7"
+    },
+    "faq_section": {
+      "header": "DUK",
+      "dress_code_header": "APRANGOS KODAS",
+      "dress_code_paragraph": "Kokteilinė apranga.\nDalį laiko leisime lauke taigi nepamirškite ir šiltesnio sluoksnio rūbo bei batukų pritaikytų žolytei.",
+      "kids_header": "MAŽIEJI",
+      "kids_paragraph": "Kad visi svečiai turėtų galimybę švęsti nesijaudindami dėl mažų akyčių ir ausyčių,\nmandagiai prašome vaikučius palikti namie.",
+      "gifts_header": "DOVANOS",
+      "gifts_paragraph": "Geriausios dovanos telpa į vokelius.",
+      "flowers_header": "GĖLĖS",
+      "flowers_paragraph": "Gėles palikite žydėti pievose.      ",
+      "anything_else_header": "TURITE KLAUSIMŲ?",
+      "anything_else_paragraph": "Nedvejokite susisiekti su mumis tiesiogiai. :)"
+    },
+    "rsvp_section": {
+      "header": "PRAŠOME ATSAKYTI",
+      "name_label": "Vardas",
+      "name_placeholder": "Jūsų vardas",
+      "attending_label": "Dalyvausiu!",
+      "transport_label": "Pavežkite mane!",
+      "comments_label": "Papildomi komentarai",
+      "comments_placeholder": "Alergijos, specialios reikmės, ir t.t.",
+      "save_button": "Išsaugoti atsakymą",
+      "thank_you": "AČIŪ!",
+      "edit_button": "Pakeisti atsakymą"
+    },
     "title": "Džiaugsmingai kviečiame\nšią mums svarbią dieną būti kartu\n",
     "names": "GRETA\n+ TADAS\n",
     "date": "GEG | 11 | 2023\n",

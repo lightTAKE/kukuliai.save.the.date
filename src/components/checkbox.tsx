@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 const CheckboxContainer = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: left;
+  justify-content: left;
+  margin: 0 0 1.4rem 0;
 `;
 
 const Icon = styled.svg`
@@ -11,6 +12,7 @@ const Icon = styled.svg`
   stroke: white;
   stroke-width: 2px;
 `;
+
 // Hide checkbox visually but remain accessible to screen readers.
 // Source: https://polished.js.org/docs/#hidevisually
 const HiddenCheckbox = styled.input.attrs({ type: "checkbox" })`
@@ -31,7 +33,7 @@ const StyledCheckbox = styled.div<{ checked: boolean }>`
   cursor: pointer;
   width: 20px;
   height: 20px;
-  background: ${(props) => (props.checked ? "#cb4127" : "#ffebf2")};
+  background: ${(props) => (props.checked ? "#163e3a" : "#58655d")};
   transition: all 150ms;
   line-height: 21px;
   text-align: center;
@@ -44,19 +46,27 @@ const StyledCheckbox = styled.div<{ checked: boolean }>`
   }
 
   &:hover {
-    background: red;
+    background: black;
   }
+`;
+
+const StyledLabel = styled.label`
+  font-family: "Open Sans",
+  font-size: 1rem;
+  width: 8rem;
 `;
 
 const Checkbox = ({
   checked,
   onChange,
   id,
+  label,
   ...props
 }: {
   checked: boolean;
   onChange: (event: any) => void;
   id: string;
+  label: string;
   props?: any[];
 }) => (
   <label>
@@ -67,6 +77,7 @@ const Checkbox = ({
         id={id}
         {...props}
       />
+      <StyledLabel>{label}</StyledLabel>
       <StyledCheckbox checked={checked}>
         <Icon viewBox="0 0 24 24">
           <polyline points="20 6 9 17 4 12" />

@@ -99,12 +99,14 @@ function RespondPlease() {
               <Checkbox
                 id="attending"
                 checked={attendingCheck}
+                label=""
                 onChange={() => setAttendingChecked(!attendingCheck)}
               />
               <StyledLabel>Need a lift!</StyledLabel>
               <Checkbox
                 id="transport"
                 checked={transportCheck}
+                label=""
                 onChange={() => setTransportChecked(!transportCheck)}
               />
               <StyledLabel>Comments&nbsp;&nbsp;</StyledLabel>
