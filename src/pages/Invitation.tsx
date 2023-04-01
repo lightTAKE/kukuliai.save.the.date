@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import mainImage from "./../images/g&t.png";
@@ -8,7 +9,6 @@ import sectionImage4 from "./../images/section4.jpg";
 import weddingFlower from "./../images/flower1.webp";
 import weddingFlower2 from "./../images/flower2.webp";
 import Checkbox from "../components/checkbox";
-import { useState } from "react";
 import useRespond from "../hooks/use-respond";
 
 const mainColor = "#aec2b6";
@@ -37,6 +37,10 @@ const StyledHeader = styled.header`
 const EmptySection = styled.section`
   height: 5.34rem;
   background-color: white;
+
+  @media screen and (max-width: 700px) {
+    height: 4rem;
+  }
 `;
 
 const StyledMenu = styled.div`
@@ -56,6 +60,10 @@ const StyledMenuItem = styled.a`
     color: ${darkColor};
     cursor: pointer;
   }
+
+  @media screen and (max-width: 700px) {
+    padding: 1.5rem 0.7rem;
+  }
 `;
 
 const RespondButton = styled.a`
@@ -71,6 +79,11 @@ const RespondButton = styled.a`
     color: ${mainColor};
     background-color: ${secondaryDarkColor};
     cursor: pointer;
+  }
+
+  @media screen and (max-width: 700px) {
+    padding: 0.5rem 0.5rem;
+    margin: 1rem 0;
   }
 `;
 
@@ -97,6 +110,10 @@ const MainImage = styled.img`
   display: block;
   margin-left: auto;
   margin-right: auto;
+
+  @media screen and (max-width: 700px) {
+    max-width: 100%;
+  }
 `;
 
 const GettingMarriedText = styled.span`
@@ -108,6 +125,10 @@ const HomeSectionDateText = styled.span`
   font-family: "Open Sans Bold";
   font-size: 3rem;
   padding: 0 0 2rem 0;
+
+  @media screen and (max-width: 700px) {
+    font-size: 2.5rem;
+  }
 `;
 
 const ParallaxSectionOne = styled.section`
@@ -227,13 +248,17 @@ const StyledLabel = styled.label`
 
 const StyledInput = styled.input`
   font-family: "Open Sans";
-  width: 25rem;
   height: 2rem;
+  min-width: 25rem;
   border: 0.2rem solid ${darkColor};
   margin: 0 0 1.5rem 0;
 
   &:focus {
     outline: 0.2rem solid ${secondaryDarkColor};
+  }
+
+  @media screen and (max-width: 700px) {
+    min-width: 15rem;
   }
 `;
 
@@ -456,7 +481,6 @@ function Invitation() {
       <RsvpSection id="rsvp">
         <StyledSectionContainer>
           <WeddingImage src={weddingFlower2} />
-
           {rsvpFormVisible ? (
             <>
               <SectionItemContainer>
