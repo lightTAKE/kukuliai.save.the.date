@@ -74,6 +74,7 @@ const RespondButton = styled.a`
   padding: 1rem 3rem;
   margin: 1rem 7rem 1rem 0;
   font-size: 1rem;
+  letter-spacing: 0.3rem;
 
   &:hover {
     color: ${mainColor};
@@ -84,6 +85,7 @@ const RespondButton = styled.a`
   @media screen and (max-width: 700px) {
     padding: 0.5rem 0.5rem;
     margin: 1rem 0;
+    letter-spacing: 0;
   }
 `;
 
