@@ -138,7 +138,7 @@ const ParallaxSectionOne = styled.section`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 50rem;
+  height: 50vh;
 `;
 
 const ParallaxSectionTwo = styled.section`
@@ -148,7 +148,7 @@ const ParallaxSectionTwo = styled.section`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 50rem;
+  height: 50vh;
 `;
 
 const ParallaxSectionThree = styled.section`
@@ -158,7 +158,7 @@ const ParallaxSectionThree = styled.section`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 50rem;
+  height: 50vh;
 `;
 
 const ParallaxSectionFour = styled.section`
@@ -168,7 +168,7 @@ const ParallaxSectionFour = styled.section`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 50rem;
+  height: 50vh;
 `;
 
 const WeddingSection = styled.section`
