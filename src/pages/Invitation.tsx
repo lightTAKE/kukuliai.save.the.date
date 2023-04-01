@@ -104,6 +104,7 @@ const StyledLinkButton = styled.a`
 const HomeSection = styled.section`
   background-color: ${mainColor};
   padding: 3rem 0;
+  color: white;
 `;
 
 const MainImage = styled.img`
