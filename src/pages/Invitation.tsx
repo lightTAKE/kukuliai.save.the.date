@@ -136,44 +136,33 @@ const HomeSectionDateText = styled.span`
   }
 `;
 
-const ParallaxSectionOne = styled.section`
+const ParallaxSection = styled.section`
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 50vh;
+
+  @supports (-webkit-touch-callout: none) {
+    background-attachment: scroll;
+    height: 100vh;
+  }
+`;
+
+const ParallaxSectionOne = styled(ParallaxSection)`
   background-image: url(${sectionImage1});
-  background-color: white;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 50vh;
 `;
 
-const ParallaxSectionTwo = styled.section`
+const ParallaxSectionTwo = styled(ParallaxSection)`
   background-image: url(${sectionImage2});
-  background-color: white;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 50vh;
 `;
 
-const ParallaxSectionThree = styled.section`
+const ParallaxSectionThree = styled(ParallaxSection)`
   background-image: url(${sectionImage3});
-  background-color: white;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 50vh;
 `;
 
-const ParallaxSectionFour = styled.section`
+const ParallaxSectionFour = styled(ParallaxSection)`
   background-image: url(${sectionImage4});
-  background-color: white;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 50vh;
 `;
 
 const WeddingSection = styled.section`
@@ -225,10 +214,10 @@ const SubjectToChangeParagraph = styled(SectionItemParagraph)`
 
 const SectionItemContainer = styled.div`
   margin: 1.5rem 0;
-  width: 50vh;
+  width: 50rem;
 
   @media screen and (max-width: 700px) {
-    width: 45vh;
+    width: 21rem;
   }
 `;
 
@@ -246,7 +235,7 @@ const RsvpItemContainer = styled(SectionItemContainer)`
 `;
 
 const RsvpParagraph = styled(SectionItemParagraph)`
-  padding: 0 0 1rem 0;
+  padding: 0 0 1.5rem 0;
 `;
 
 const GettingThereSection = styled.section`
@@ -387,8 +376,8 @@ function Invitation() {
 
       <WeddingSection id="wedding">
         <StyledSectionContainer>
-          <WeddingImage src={weddingFlower} />
           <SectionItemContainer>
+            <WeddingImage src={weddingFlower} />
             <SectionHeaderText>{t("wedding_section.header")}</SectionHeaderText>
           </SectionItemContainer>
           <SectionItemContainer>
