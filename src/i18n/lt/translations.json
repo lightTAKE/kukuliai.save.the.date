@@ -25,7 +25,29 @@
       "where_header": "Kur",
       "where_paragraph": "Fazenda, Tartoko k. 5, Kaišiadorių raj., Kauno apskritis, Lietuva",
       "rsvp_paragraph": "Prašome atsakyti ne vėliau kaip balandžio 10 d.",
-      "rsvp_button": "Prašome atsakyti"
+      "rsvp_button": "Prašome atsakyti",
+      "day_plan": {
+        "header": "DIENOS PLANAS",
+        "leaving_header": "14:00 - Išvykimas į Fazendos sodybą",
+        "leaving_paragraph": "Autobusas su visais svečiais išvyks iš nurodytos paėmimo vietos Vilniuje. Dienos planą atnaujinsime vėliau, kai finalizuosime visas detales.",
+        "arrival_header": "15:30 - Atvykimas ir priėmimas",
+        "arrival_paragraph": "Svečiai į renginio vietą turėtų atvykti 15.30 val. Atvykus svečiai bus palydėti iki ceremonijos vietos. Prieš prasidedant ceremonijai svečiai galės pabendrauti ir pasimėgauti gaiviaisiais gėrimais.",
+        "ceremony_header": "16:00 - Vestuvių ceremonija",
+        "ceremony_paragraph": "Vestuvių ceremonija prasidės 16 val. Pora apsikeis įžadais ir įtvirtins sąjungą bučiniu. Tikimasi, kad ceremonija truks 30 minučių.",
+        "coctail_header": "17:00 - Kokteilių valanda",
+        "coctail_paragraph": "Po ceremonijos svečiai bus nukreipti į zoną kokteilių valandai. Jie bus vaišinami gėrimais ir lengvais užkandžiais, kol pora fotografuosis.",
+        "dinner_header": "18:00 - Vakarienė",
+        "dinner_paragraph": "Svečiai bus nukreipti į pagrindinę erdvę vakarienei. Pora ir jų svečiai bus vaišinami gardžiu maistu.",
+        "cake_header": "20:30 - Tortas",
+        "cake_paragraph": "Pora pjaustys savo vestuvinį tortą, o svečiai bus vaišinami desertu.",
+        "bonfire_header": "21:00 - Laužas",
+        "bonfire_paragraph": "Svečiai rinksis prie laužo lauke. Bus sakokmi linkėjimai jaunavedžiams.",
+        "dancing_header": "21:30 - Šokiai",
+        "dancing_paragraph": "Po palinkėjimų svečiai bus pakviesti į šokių aikštelę. Skambės muzika, svečiai galės šokti.",
+        "end_header": "24:00-01:00 - Šventės pabaiga",
+        "end_paragraph": "Šventė ateis į pabaigą. Apie vidurnaktį iš renginio vietos pajudėsime į Vilnių.",
+        "might_change_paragraph": "*Planas gali kisti"
+      }
     },
     "getting_there_section": {
       "header": "KAIP ATVYKTI",

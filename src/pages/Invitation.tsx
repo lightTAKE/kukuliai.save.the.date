@@ -10,6 +10,7 @@ import weddingFlower from "./../images/flower1.webp";
 import weddingFlower2 from "./../images/flower2.webp";
 import Checkbox from "../components/checkbox";
 import useRespond from "../hooks/use-respond";
+import Arrow from "../components/arrow";
 
 const mainColor = "#aec2b6";
 const darkColor = "#163e3a";
@@ -192,6 +193,17 @@ const SectionHeaderText = styled.span`
   letter-spacing: 0.3rem;
 `;
 
+const PlanHeaderText = styled.span`
+  font-family: "Open Sans Bold";
+  font-size: 2rem;
+  letter-spacing: 0.3rem;
+`;
+
+const PlanItemHeader = styled.span`
+  font-size: 1.4rem;
+  letter-spacing: 0.2rem;
+`;
+
 const SectionItemHeader = styled.span`
   font-size: 1.7rem;
   letter-spacing: 0.2rem;
@@ -202,6 +214,12 @@ const SectionItemParagraph = styled.p`
   margin: 0;
   letter-spacing: 0.1rem;
   line-height: 2rem;
+`;
+
+const SubjectToChangeParagraph = styled(SectionItemParagraph)`
+  font-family: "Open Sans Bold";
+  font-size: 0.9rem;
+  margin: 2rem 0 0 0;
 `;
 
 const SectionItemContainer = styled.div`
@@ -219,6 +237,8 @@ const StyledDivider = styled.div`
   background-color: ${darkColor};
   margin: 0.5rem auto;
 `;
+
+const StyledPlanContainer = styled.div``;
 
 const StyledRsvpContainer = styled.div`
   margin: 3rem 0 2rem 0;
@@ -301,7 +321,6 @@ function Invitation() {
         window.pageYOffset -
         emptySection.offsetHeight;
       window.scrollTo({ top: y, behavior: "smooth" });
-      console.log(y);
     }
   };
 
@@ -310,6 +329,7 @@ function Invitation() {
   const [transportCheck, setTransportChecked] = useState(true);
   const [comments, setComments] = useState("");
 
+  const [planVisible, setPlanVisible] = useState(false);
   const [rsvpFormVisible, setRsvpFormVisible] = useState(true);
 
   const respond = useRespond();
@@ -350,7 +370,9 @@ function Invitation() {
           </StyledMenuItem>
         </StyledMenu>
       </StyledHeader>
+
       <EmptySection id="empty-section" />
+
       <HomeSection id="home">
         <StyledSectionContainer>
           <MainImage src={mainImage} />
@@ -360,7 +382,9 @@ function Invitation() {
           <HomeSectionDateText>{t("home_section.date")}</HomeSectionDateText>
         </StyledSectionContainer>
       </HomeSection>
+
       <ParallaxSectionOne />
+
       <WeddingSection id="wedding">
         <StyledSectionContainer>
           <WeddingImage src={weddingFlower} />
@@ -388,6 +412,111 @@ function Invitation() {
               {t("wedding_section.where_paragraph")}
             </SectionItemParagraph>
           </SectionItemContainer>
+
+          <SectionItemContainer>
+            <PlanHeaderText>
+              {t("wedding_section.day_plan.header")}
+            </PlanHeaderText>
+          </SectionItemContainer>
+
+          <Arrow
+            rotated={planVisible}
+            onClick={() => setPlanVisible(!planVisible)}
+          />
+
+          {planVisible ? (
+            <StyledPlanContainer>
+              <SectionItemContainer>
+                <PlanItemHeader>
+                  {t("wedding_section.day_plan.leaving_header")}
+                </PlanItemHeader>
+                <StyledDivider />
+                <SectionItemParagraph>
+                  {t("wedding_section.day_plan.leaving_paragraph")}
+                </SectionItemParagraph>
+              </SectionItemContainer>
+              <SectionItemContainer>
+                <PlanItemHeader>
+                  {t("wedding_section.day_plan.arrival_header")}
+                </PlanItemHeader>
+                <StyledDivider />
+                <SectionItemParagraph>
+                  {t("wedding_section.day_plan.arrival_paragraph")}
+                </SectionItemParagraph>
+              </SectionItemContainer>
+              <SectionItemContainer>
+                <PlanItemHeader>
+                  {t("wedding_section.day_plan.ceremony_header")}
+                </PlanItemHeader>
+                <StyledDivider />
+                <SectionItemParagraph>
+                  {t("wedding_section.day_plan.ceremony_paragraph")}
+                </SectionItemParagraph>
+              </SectionItemContainer>
+              <SectionItemContainer>
+                <PlanItemHeader>
+                  {t("wedding_section.day_plan.coctail_header")}
+                </PlanItemHeader>
+                <StyledDivider />
+                <SectionItemParagraph>
+                  {t("wedding_section.day_plan.coctail_paragraph")}
+                </SectionItemParagraph>
+              </SectionItemContainer>
+              <SectionItemContainer>
+                <PlanItemHeader>
+                  {t("wedding_section.day_plan.dinner_header")}
+                </PlanItemHeader>
+                <StyledDivider />
+                <SectionItemParagraph>
+                  {t("wedding_section.day_plan.dinner_paragraph")}
+                </SectionItemParagraph>
+              </SectionItemContainer>
+              <SectionItemContainer>
+                <PlanItemHeader>
+                  {t("wedding_section.day_plan.cake_header")}
+                </PlanItemHeader>
+                <StyledDivider />
+                <SectionItemParagraph>
+                  {t("wedding_section.day_plan.cake_paragraph")}
+                </SectionItemParagraph>
+              </SectionItemContainer>
+              <SectionItemContainer>
+                <PlanItemHeader>
+                  {t("wedding_section.day_plan.bonfire_header")}
+                </PlanItemHeader>
+                <StyledDivider />
+                <SectionItemParagraph>
+                  {t("wedding_section.day_plan.bonfire_paragraph")}
+                </SectionItemParagraph>
+              </SectionItemContainer>
+              <SectionItemContainer>
+                <PlanItemHeader>
+                  {t("wedding_section.day_plan.dancing_header")}
+                </PlanItemHeader>
+                <StyledDivider />
+                <SectionItemParagraph>
+                  {t("wedding_section.day_plan.dancing_paragraph")}
+                </SectionItemParagraph>
+              </SectionItemContainer>
+              <SectionItemContainer>
+                <PlanItemHeader>
+                  {t("wedding_section.day_plan.end_header")}
+                </PlanItemHeader>
+                <StyledDivider />
+                <SectionItemParagraph>
+                  {t("wedding_section.day_plan.end_paragraph")}
+                </SectionItemParagraph>
+              </SectionItemContainer>
+              <SectionItemContainer>
+                <SubjectToChangeParagraph>
+                  {t("wedding_section.day_plan.might_change_paragraph")}
+                </SubjectToChangeParagraph>
+              </SectionItemContainer>
+            </StyledPlanContainer>
+          ) : (
+            <></>
+          )}
+
           <StyledRsvpContainer>
             <RsvpParagraph>{t("wedding_section.rsvp_paragraph")}</RsvpParagraph>
             <StyledLinkButton onClick={() => scrollToSection("rsvp")}>
@@ -396,7 +525,9 @@ function Invitation() {
           </StyledRsvpContainer>
         </StyledSectionContainer>
       </WeddingSection>
+
       <ParallaxSectionTwo />
+
       <GettingThereSection id="getting-there">
         <StyledSectionContainer>
           <SectionItemContainer>
@@ -433,6 +564,7 @@ function Invitation() {
         </StyledSectionContainer>
       </GettingThereSection>
       <ParallaxSectionThree />
+
       <FaqSection id="faq">
         <StyledSectionContainer>
           <SectionItemContainer>
@@ -494,7 +626,9 @@ function Invitation() {
           </SectionItemContainer>
         </StyledSectionContainer>
       </FaqSection>
+
       <ParallaxSectionFour />
+
       <RsvpSection id="rsvp">
         <StyledSectionContainer>
           <WeddingImage src={weddingFlower2} />

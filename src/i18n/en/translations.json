@@ -25,7 +25,29 @@
       "where_header": "Where",
       "where_paragraph": "Fazenda, Tartoko village 5, Kaišiadoriai district, Kaunas county, Lithuania",
       "rsvp_paragraph": "Please respond latest by April 10",
-      "rsvp_button": "R S V P"
+      "rsvp_button": "R S V P",
+      "day_plan": {
+        "header": "CELEBRATION PLAN",
+        "leaving_header": "14:00 - Leaving to Fazenda Venue",
+        "leaving_paragraph": "A bus will be leaving with all the guests from designated pick-up location in Vilnius. We will update day plan later on when we have all the details sorted out.",
+        "arrival_header": "15:30 - Arrival and Reception",
+        "arrival_paragraph": "Guests are expected to arrive at the venue at 15:30. They will be welcomed and shown to the ceremony place where guests can mingle and enjoy refreshments before the ceremony begins.",
+        "ceremony_header": "16:00 - Wedding Ceremony",
+        "ceremony_paragraph": "The wedding ceremony will begin at 16:00. The couple will exchange their vows and seal their union with a kiss. The ceremony is expected to last for 30 minutes.",
+        "coctail_header": "17:00 - Cocktail Hour",
+        "coctail_paragraph": "After the ceremony, guests will be directed to an area for a cocktail hour. They will be served drinks and light refreshments while the couple takes their wedding photos.",
+        "dinner_header": "18:00 - Dinner Reception",
+        "dinner_paragraph": "Guests will be directed to the main hall for the dinner reception. The couple and their guests will be served a delicious meal.",
+        "cake_header": "20:30 - Cake Cutting",
+        "cake_paragraph": "The couple will cut their wedding cake, and the guests will be served with dessert.",
+        "bonfire_header": "21:00 - Bonfire",
+        "bonfire_paragraph": "Guests will gather around fire outside. Wishes will be made to celebrate the newlyweds.",
+        "dancing_header": "21:30 - Dancing and Celebrations",
+        "dancing_paragraph": "After the wishes, guests will be invited to the dance floor. Music will be playing, guests are free to dance and celebrate the newlyweds.",
+        "end_header": "24:00-01:00 - End of Celebration",
+        "end_paragraph": "The celebration will come to an end. Around midnight we will head back to Vilnius from the venue.",
+        "might_change_paragraph": "*Plan is subject to change"
+      }
     },
     "getting_there_section": {
       "header": "GETTING THERE",
