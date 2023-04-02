@@ -240,12 +240,11 @@ const StyledDivider = styled.div`
 
 const StyledPlanContainer = styled.div``;
 
-const StyledRsvpContainer = styled.div`
+const RsvpItemContainer = styled(SectionItemContainer)`
   margin: 3rem 0 2rem 0;
 `;
 
-const RsvpParagraph = styled.p`
-  font-size: 1rem;
+const RsvpParagraph = styled(SectionItemParagraph)`
   padding: 0 0 1rem 0;
 `;
 
@@ -391,9 +390,11 @@ function Invitation() {
           <SectionItemContainer>
             <SectionHeaderText>{t("wedding_section.header")}</SectionHeaderText>
           </SectionItemContainer>
-          <SectionItemParagraph>
-            {t("wedding_section.invitation_paragraph")}
-          </SectionItemParagraph>
+          <SectionItemContainer>
+            <SectionItemParagraph>
+              {t("wedding_section.invitation_paragraph")}
+            </SectionItemParagraph>
+          </SectionItemContainer>
           <SectionItemContainer>
             <SectionItemHeader>
               {t("wedding_section.when_header")}
@@ -517,12 +518,12 @@ function Invitation() {
             <></>
           )}
 
-          <StyledRsvpContainer>
+          <RsvpItemContainer>
             <RsvpParagraph>{t("wedding_section.rsvp_paragraph")}</RsvpParagraph>
             <StyledLinkButton onClick={() => scrollToSection("rsvp")}>
               {t("wedding_section.rsvp_button")}
             </StyledLinkButton>
-          </StyledRsvpContainer>
+          </RsvpItemContainer>
         </StyledSectionContainer>
       </WeddingSection>
 
