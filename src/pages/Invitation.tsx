@@ -206,6 +206,11 @@ const SectionItemParagraph = styled.p`
 
 const SectionItemContainer = styled.div`
   margin: 1.5rem 0;
+  width: 50vh;
+
+  @media screen and (max-width: 700px) {
+    width: 45vh;
+  }
 `;
 
 const StyledDivider = styled.div`
@@ -467,6 +472,15 @@ function Invitation() {
             <StyledDivider />
             <SectionItemParagraph>
               {t("faq_section.gifts_paragraph")}
+            </SectionItemParagraph>
+          </SectionItemContainer>
+          <SectionItemContainer>
+            <SectionItemHeader>
+              {t("faq_section.celebration_length_header")}
+            </SectionItemHeader>
+            <StyledDivider />
+            <SectionItemParagraph>
+              {t("faq_section.celebration_length_paragraph")}
             </SectionItemParagraph>
           </SectionItemContainer>
           <SectionItemContainer>
