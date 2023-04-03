@@ -24,7 +24,6 @@ export default function Arrow({ onClick, rotated }: ArrowProps) {
     setRotated(!isRotated);
     onClick();
   };
-  console.log(isRotated);
   return (
     <StyledContainer onClick={() => handleClick()}>
       <StyledArrowImage

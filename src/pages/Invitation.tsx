@@ -11,6 +11,8 @@ import weddingFlower2 from "./../images/flower2.webp";
 import Checkbox from "../components/checkbox";
 import useRespond from "../hooks/use-respond";
 import Arrow from "../components/arrow";
+import { WithRetry } from "../helpers/retry";
+import Spinner from "../components/spinner";
 
 const mainColor = "#aec2b6";
 const darkColor = "#163e3a";
@@ -320,21 +322,36 @@ function Invitation() {
 
   const [planVisible, setPlanVisible] = useState(false);
   const [rsvpFormVisible, setRsvpFormVisible] = useState(true);
+  const [spinnerVisible, setSpinnerVisible] = useState(false);
 
   const respond = useRespond();
 
   const handleSubmit = async (event: any) => {
     event.preventDefault();
+    let submitSuccess = true;
+    setSpinnerVisible(true);
     try {
-      await respond({
-        name: name,
-        attending: attendingCheck,
-        needTransport: transportCheck,
-        comments: comments,
-      });
-      setRsvpFormVisible(false);
+      await WithRetry(
+        async () =>
+          await respond({
+            name: name,
+            attending: attendingCheck,
+            needTransport: transportCheck,
+            comments: comments,
+          }),
+        3,
+        30000
+      );
     } catch {
-      alert("Oops! Something went wrong :(");
+      submitSuccess = false;
+      alert(
+        "Oops! Something went wrong :( Please try again or contact Tadas, thank you!"
+      );
+    }
+
+    setSpinnerVisible(false);
+    if (submitSuccess) {
+      setRsvpFormVisible(false);
     }
   };
 
@@ -622,59 +639,67 @@ function Invitation() {
 
       <RsvpSection id="rsvp">
         <StyledSectionContainer>
-          <WeddingImage src={weddingFlower2} />
-          {rsvpFormVisible ? (
-            <>
-              <SectionItemContainer>
-                <SectionHeaderText>
-                  {t("rsvp_section.header")}
-                </SectionHeaderText>
-              </SectionItemContainer>
-              <StyledForm>
-                <StyledLabel>{t("rsvp_section.name_label")}</StyledLabel>
-                <StyledInput
-                  type="text"
-                  value={name}
-                  autoComplete="off"
-                  placeholder={namePlaceholder}
-                  required
-                  onChange={(e) => setName(e.target.value)}
-                />
-                <Checkbox
-                  id="attending"
-                  checked={attendingCheck}
-                  label={t("rsvp_section.attending_label")}
-                  onChange={() => setAttendingChecked(!attendingCheck)}
-                />
-                <Checkbox
-                  id="transport"
-                  checked={transportCheck}
-                  label={t("rsvp_section.transport_label")}
-                  onChange={() => setTransportChecked(!transportCheck)}
-                />
-                <StyledLabel>{t("rsvp_section.comments_label")}</StyledLabel>
-                <StyledTextarea
-                  value={comments}
-                  autoComplete="off"
-                  rows={4}
-                  placeholder={placeholder}
-                  onChange={(e) => setComments(e.target.value)}
-                />
-                <StyledLinkButton onClick={handleSubmit}>
-                  {t("rsvp_section.save_button")}
-                </StyledLinkButton>
-              </StyledForm>
-            </>
+          {spinnerVisible ? (
+            <Spinner />
           ) : (
             <>
-              <SectionItemContainer>
-                <SectionHeaderText>
-                  {t("rsvp_section.thank_you")}
-                </SectionHeaderText>
-              </SectionItemContainer>
-              <StyledLinkButton onClick={() => setRsvpFormVisible(true)}>
-                {t("rsvp_section.edit_button")}
-              </StyledLinkButton>
+              <WeddingImage src={weddingFlower2} />
+              {rsvpFormVisible ? (
+                <>
+                  <SectionItemContainer>
+                    <SectionHeaderText>
+                      {t("rsvp_section.header")}
+                    </SectionHeaderText>
+                  </SectionItemContainer>
+                  <StyledForm>
+                    <StyledLabel>{t("rsvp_section.name_label")}</StyledLabel>
+                    <StyledInput
+                      type="text"
+                      value={name}
+                      autoComplete="off"
+                      placeholder={namePlaceholder}
+                      required
+                      onChange={(e) => setName(e.target.value)}
+                    />
+                    <Checkbox
+                      id="attending"
+                      checked={attendingCheck}
+                      label={t("rsvp_section.attending_label")}
+                      onChange={() => setAttendingChecked(!attendingCheck)}
+                    />
+                    <Checkbox
+                      id="transport"
+                      checked={transportCheck}
+                      label={t("rsvp_section.transport_label")}
+                      onChange={() => setTransportChecked(!transportCheck)}
+                    />
+                    <StyledLabel>
+                      {t("rsvp_section.comments_label")}
+                    </StyledLabel>
+                    <StyledTextarea
+                      value={comments}
+                      autoComplete="off"
+                      rows={4}
+                      placeholder={placeholder}
+                      onChange={(e) => setComments(e.target.value)}
+                    />
+                    <StyledLinkButton onClick={handleSubmit}>
+                      {t("rsvp_section.save_button")}
+                    </StyledLinkButton>
+                  </StyledForm>
+                </>
+              ) : (
+                <>
+                  <SectionItemContainer>
+                    <SectionHeaderText>
+                      {t("rsvp_section.thank_you")}
+                    </SectionHeaderText>
+                  </SectionItemContainer>
+                  <StyledLinkButton onClick={() => setRsvpFormVisible(true)}>
+                    {t("rsvp_section.edit_button")}
+                  </StyledLinkButton>
+                </>
+              )}
             </>
           )}
         </StyledSectionContainer>
