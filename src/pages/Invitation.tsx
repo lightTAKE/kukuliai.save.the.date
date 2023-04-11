@@ -8,11 +8,7 @@ import sectionImage3 from "./../images/section3.jpg";
 import sectionImage4 from "./../images/section4.jpg";
 import weddingFlower from "./../images/flower1.webp";
 import weddingFlower2 from "./../images/flower2.webp";
-import Checkbox from "../components/checkbox";
-import useRespond from "../hooks/use-respond";
 import Arrow from "../components/arrow";
-import { WithRetry } from "../helpers/retry";
-import Spinner from "../components/spinner";
 
 const mainColor = "#aec2b6";
 const darkColor = "#163e3a";
@@ -255,52 +251,8 @@ const RsvpSection = styled.section`
   padding: 5rem 0;
 `;
 
-const StyledForm = styled.form`
-  display: contents;
-  font-family: "Open Sans";
-  text-align: left;
-`;
-
-const StyledLabel = styled.label`
-  padding: 0 0 0.2rem 0;
-`;
-
-const StyledInput = styled.input`
-  font-family: "Open Sans";
-  height: 2rem;
-  min-width: 25rem;
-  border: 0.2rem solid ${darkColor};
-  margin: 0 0 1.5rem 0;
-
-  &:focus {
-    outline: 0.2rem solid ${secondaryDarkColor};
-  }
-
-  @media screen and (max-width: 700px) {
-    min-width: 15rem;
-  }
-`;
-
-const StyledTextarea = styled.textarea`
-  font-family: "Open Sans";
-  border: 0.2rem solid ${darkColor};
-  margin: 0 0 1.5rem 0;
-  resize: none;
-
-  &:focus {
-    outline: 0.2rem solid ${secondaryDarkColor};
-  }
-`;
-
-function getNameFromQueryString(): string {
-  const queryParams = new URLSearchParams(document.location.search);
-  return queryParams.get("name") || "";
-}
-
 function Invitation() {
   const { t } = useTranslation("", { keyPrefix: "invitation" });
-  const placeholder = t("rsvp_section.comments_placeholder");
-  const namePlaceholder = t("rsvp_section.name_placeholder");
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -315,45 +267,7 @@ function Invitation() {
     }
   };
 
-  const [name, setName] = useState(getNameFromQueryString());
-  const [attendingCheck, setAttendingChecked] = useState(true);
-  const [transportCheck, setTransportChecked] = useState(true);
-  const [comments, setComments] = useState("");
-
   const [planVisible, setPlanVisible] = useState(false);
-  const [rsvpFormVisible, setRsvpFormVisible] = useState(true);
-  const [spinnerVisible, setSpinnerVisible] = useState(false);
-
-  const respond = useRespond();
-
-  const handleSubmit = async (event: any) => {
-    event.preventDefault();
-    let submitSuccess = true;
-    setSpinnerVisible(true);
-    try {
-      await WithRetry(
-        async () =>
-          await respond({
-            name: name,
-            attending: attendingCheck,
-            needTransport: transportCheck,
-            comments: comments,
-          }),
-        3,
-        30000
-      );
-    } catch {
-      submitSuccess = false;
-      alert(
-        "Oops! Something went wrong :( Please try again or contact Tadas, thank you!"
-      );
-    }
-
-    setSpinnerVisible(false);
-    if (submitSuccess) {
-      setRsvpFormVisible(false);
-    }
-  };
 
   return (
     <StyledContainer>
@@ -639,69 +553,13 @@ function Invitation() {
 
       <RsvpSection id="rsvp">
         <StyledSectionContainer>
-          {spinnerVisible ? (
-            <Spinner />
-          ) : (
-            <>
-              <WeddingImage src={weddingFlower2} />
-              {rsvpFormVisible ? (
-                <>
-                  <SectionItemContainer>
-                    <SectionHeaderText>
-                      {t("rsvp_section.header")}
-                    </SectionHeaderText>
-                  </SectionItemContainer>
-                  <StyledForm>
-                    <StyledLabel>{t("rsvp_section.name_label")}</StyledLabel>
-                    <StyledInput
-                      type="text"
-                      value={name}
-                      autoComplete="off"
-                      placeholder={namePlaceholder}
-                      required
-                      onChange={(e) => setName(e.target.value)}
-                    />
-                    <Checkbox
-                      id="attending"
-                      checked={attendingCheck}
-                      label={t("rsvp_section.attending_label")}
-                      onChange={() => setAttendingChecked(!attendingCheck)}
-                    />
-                    <Checkbox
-                      id="transport"
-                      checked={transportCheck}
-                      label={t("rsvp_section.transport_label")}
-                      onChange={() => setTransportChecked(!transportCheck)}
-                    />
-                    <StyledLabel>
-                      {t("rsvp_section.comments_label")}
-                    </StyledLabel>
-                    <StyledTextarea
-                      value={comments}
-                      autoComplete="off"
-                      rows={4}
-                      placeholder={placeholder}
-                      onChange={(e) => setComments(e.target.value)}
-                    />
-                    <StyledLinkButton onClick={handleSubmit}>
-                      {t("rsvp_section.save_button")}
-                    </StyledLinkButton>
-                  </StyledForm>
-                </>
-              ) : (
-                <>
-                  <SectionItemContainer>
-                    <SectionHeaderText>
-                      {t("rsvp_section.thank_you")}
-                    </SectionHeaderText>
-                  </SectionItemContainer>
-                  <StyledLinkButton onClick={() => setRsvpFormVisible(true)}>
-                    {t("rsvp_section.edit_button")}
-                  </StyledLinkButton>
-                </>
-              )}
-            </>
-          )}
+          <WeddingImage src={weddingFlower2} />
+          <SectionHeaderText>{t("rsvp_section.thank_you")}</SectionHeaderText>
+          <SectionItemContainer>
+            <SectionItemParagraph>
+              {t("rsvp_section.thank_you_paragraph")}
+            </SectionItemParagraph>
+          </SectionItemContainer>
         </StyledSectionContainer>
       </RsvpSection>
     </StyledContainer>
