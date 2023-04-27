@@ -404,20 +404,20 @@ function Invitation() {
               </SectionItemContainer>
               <SectionItemContainer>
                 <PlanItemHeader>
-                  {t("wedding_section.day_plan.bonfire_header")}
-                </PlanItemHeader>
-                <StyledDivider />
-                <SectionItemParagraph>
-                  {t("wedding_section.day_plan.bonfire_paragraph")}
-                </SectionItemParagraph>
-              </SectionItemContainer>
-              <SectionItemContainer>
-                <PlanItemHeader>
                   {t("wedding_section.day_plan.dancing_header")}
                 </PlanItemHeader>
                 <StyledDivider />
                 <SectionItemParagraph>
                   {t("wedding_section.day_plan.dancing_paragraph")}
+                </SectionItemParagraph>
+              </SectionItemContainer>
+              <SectionItemContainer>
+                <PlanItemHeader>
+                  {t("wedding_section.day_plan.bonfire_header")}
+                </PlanItemHeader>
+                <StyledDivider />
+                <SectionItemParagraph>
+                  {t("wedding_section.day_plan.bonfire_paragraph")}
                 </SectionItemParagraph>
               </SectionItemContainer>
               <SectionItemContainer>
@@ -467,12 +467,16 @@ function Invitation() {
             </SectionItemParagraph>
           </SectionItemContainer>
           <SectionItemContainer>
-            <SectionItemHeader>
-              {t("getting_there_section.accomodations_header")}
-            </SectionItemHeader>
-            <StyledDivider />
+            <StyledLinkButton
+              href="https://goo.gl/maps/QSbrQEpXu6y45J4E7"
+              target="_blank"
+            >
+              {t("getting_there_section.pickup_button")}
+            </StyledLinkButton>
+          </SectionItemContainer>
+          <SectionItemContainer>
             <SectionItemParagraph>
-              {t("getting_there_section.accomodations_paragraph")}
+              {t("getting_there_section.getting_there_yourself_paragraph")}
             </SectionItemParagraph>
           </SectionItemContainer>
           <SectionItemContainer>
@@ -482,6 +486,15 @@ function Invitation() {
             >
               {t("getting_there_section.map_button")}
             </StyledLinkButton>
+          </SectionItemContainer>
+          <SectionItemContainer>
+            <SectionItemHeader>
+              {t("getting_there_section.accomodations_header")}
+            </SectionItemHeader>
+            <StyledDivider />
+            <SectionItemParagraph>
+              {t("getting_there_section.accomodations_paragraph")}
+            </SectionItemParagraph>
           </SectionItemContainer>
         </StyledSectionContainer>
       </GettingThereSection>
